@@ -1,2 +1,1 @@
-if(isVowel(c)) vowel++;
-        els
+cout<<word<<endl;
