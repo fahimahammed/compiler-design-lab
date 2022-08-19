@@ -67,6 +67,6 @@ int main(){
         }
     }
 
-    readFile.close();
+    // readFile.close();
     return 0;
 }
