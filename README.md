@@ -2,7 +2,7 @@
 
 ### Basic:
 | 	Problem	 | 	Source Code	 | 	
-| 	:-----:	 | 	:-----:	 | 	
+| 	--------	 | 	--------	 | 	
 |Count number of words, letters, digits, and other characters	| 	Value2	|
 |Separates letters, digits, and other characters	| 	Value2	|
 |Count how many vowels and consonents are there?	| 	Value2	|
