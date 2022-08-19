@@ -11,6 +11,6 @@
 
 
 ### Lexical Analyzer
-| Problem | Source Code |
-| --------| --------- |
+| SL |Problem | Source Code |
+| -- |--------| --------- |
 | 1 | Lexical Analyzer | <a href="https://github.com/fahimahammed/compiler-design-lab/blob/main/lexical-analyzer/lexical-analyzer.cpp">Code</a> |
