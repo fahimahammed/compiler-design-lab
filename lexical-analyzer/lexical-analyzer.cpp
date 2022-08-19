@@ -45,7 +45,7 @@ int main(){
     while(!readFile.eof()){
         readFile.get(c);
         if(isOperator(c)){
-            cout<< c << "\tis a operator"<< endl;
+            cout<< c << "\t-> operator"<< endl;
         }
 
         if(isalnum(c)){
@@ -56,13 +56,13 @@ int main(){
             //cout<<word<<" ";
             i = 0;
             if(isKeyword(word)){
-                cout<< word << "\tis a keyword."<<endl;
+                cout<< word << "\t-> keyword."<<endl;
             }
             else if(isConst(word)){
-                cout<< word << "\tis a constent."<<endl;
+                cout<< word << "\t-> constent."<<endl;
             }
             else{
-                cout<< word << "\tis a identifier."<<endl;
+                cout<< word << "\t-> identifier."<<endl;
             }
         }
     }
