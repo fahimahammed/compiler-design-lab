@@ -25,13 +25,13 @@ void setWord(string word){
 }
 
 void subString(string str){
-    for (auto x : str){
-        if (x == ' ' || x == EOF || x=='\0' || x == '.' || x==','){
+    for (int x =0; x < str.size(); x++){
+        if (str[x] == ' ' || str[x] == EOF || str[x]=='\0' || str[x] == '.' || str[x]==','){
             setWord(word);
             word = "";
         }
         else{
-            word += x;
+            word += str[x];
         }
     }
     setWord(word);
