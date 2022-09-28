@@ -5,104 +5,68 @@
 using namespace std;
 
 bool isIntVariable(string token) {
-    bool flag = true;
-
-    if ((token[0] >= 'i' && token[0] <= 'n') || ((token[0] >= 'I' && token[0] <= 'N'))) {
-    } else {
-        flag = false;
-    }
+    if (!(token[0] >= 'i' && token[0] <= 'n') && !((token[0] >= 'I' && token[0] <= 'N'))) return false;
 
     for (int i = 1; i < token.size(); i++) {
-        if ((token[i] >= 'a' && token[i] <= 'z') || (token[i] >= 'A' && token[i] <= 'Z') || (token[i] >= '0' && token[i] <= '9')) {
-        } else {
-            flag = false;
-        }
+        if (!(token[i] >= 'a' && token[i] <= 'z') && !(token[i] >= 'A' && token[i] <= 'Z') && !(token[i] >= '0' && token[i] <= '9')) return false;
     }
-    return flag;
+    return true;
 }
 
 bool checkInt(string token){
-    bool flag = true;
     for (int i = 0; i < token.size(); i++) {
         if (i == 0) {
-            if (token[i] >= '1' && token[i] <= '9') {
-            } else {
-                flag = false;
-            }
+            if (!(token[i] >= '1' && token[i] <= '9')) return false;
         } else {
-            if (token[i] >= '0' && token[i] <= '9') {} 
-            else {
-                flag = false;
-            }
+            if (!(token[i] >= '0' && token[i] <= '9')) return false;
         }
     }
-    return flag;
+    return true;
 }
 
 bool isShortInt(string token) {
-    bool flag = true;
-
-    if (token.size() > 4) {
-        flag = false;
-    } else {
-        flag = checkInt(token);
-    }
-    return flag;
+    if (token.size() > 4) return false;
+    else return checkInt(token);
 }
 
 bool isLongInt(string token) {
-    bool flag = true;
-
-    if(token.size() < 4){
-        flag = false;
-    }
-    else{
-        flag = checkInt(token);
-    }
-    return flag;
+    if(token.size() < 4) return false;
+    else return checkInt(token);
 }
 
 bool isFloatVariable(string token){
-    bool flag = true;
     for (int i = 0; i < token.size(); i++) {
         if (i == 0) {
-            if ((token[i] >= 'a' && token[i] <= 'h') || (token[i] >= 'A' && token[i] <= 'H') || (token[i] >= 'o' && token[i] <= 'z') || (token[i] >= 'O' && token[i] <= 'Z')) {
-            } else {
-                flag = false;
-            }
+            if (!(token[i] >= 'a' && token[i] <= 'h') && !(token[i] >= 'A' && token[i] <= 'H') && !(token[i] >= 'o' && token[i] <= 'z') && !(token[i] >= 'O' && token[i] <= 'Z')) return false;
         } else {
-            if ((token[i] >= '0' && token[i] <= '9') || (token[i] >= 'a' && token[i] <= 'z') || (token[i] >= 'A' && token[i] <= 'Z')) {} 
-            else {
-                flag = false;
-            }
+            if (!(token[i] >= '0' && token[i] <= '9') && !(token[i] >= 'a' && token[i] <= 'z') && !(token[i] >= 'A' && token[i] <= 'Z'))  return false;
         }
     }
-    return flag;
+    return true;
 }
 
 bool checkFloat(string token, int length){
-    bool flag = true, firstZero=false, period = false;
+    bool firstZero=false, period = false;
     int count = 0;
     for (int i = 0; i < token.size(); i++) {
 
         if(!period){
             if (i == 0 && token[i] == '0')  firstZero = true;    
-            else if(token[i] != '.' && firstZero) flag = false;
+            else if(token[i] != '.' && firstZero) return false;
 
             else if(i == 0){
-                if(token[i] >= '1' && token[i] <= '9'){}
-                else flag = false;
+                if(!(token[i] >= '1' && token[i] <= '9')) return false;
             }
-            else if(i > 0 && token[i] == '.') period = true;
+            else if(i > 0 && token[i] == '.')  period = true;
         }
         else{
             if(token[i] >= '0' && token[i] <= '9' && (length ? count < 2 : count > -1)){
                 count++;
             }
-            else flag = false; 
+            else return false; 
         }
     }
-    return flag;
+    return period;
 }
 
 bool isFloatNumber(string token){
@@ -183,7 +147,7 @@ void LexicalAnalyzer(string expression) {
 }
 
 int main() {
-    string exp = "iaz3 1 123 12345 012345 C34z0 0.1 0.12 121.12 12.1212 ch_12a bn_3s 012 011 11100";
+    string exp = "Iiaz3 *3ij 123 12345 12s345 hx34Z Zci4V C34z0 0.1 0.12 121.12 12.1212 ch_12a bn_3s 012 011 11100";
     cout << "String: " << exp << endl;
     LexicalAnalyzer(exp);
 }

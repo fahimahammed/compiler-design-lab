@@ -1,2 +1,1 @@
-if (i == expression.size() - 1)
-                to
+(token[0] >= 'i' && token[0] <= 'n') || ((token[0] >= 'I' && token[0] <= 'N'))
