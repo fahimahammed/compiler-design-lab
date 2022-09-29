@@ -16,5 +16,5 @@
 | 1 | Lexical Analyzer | <a href="https://github.com/fahimahammed/compiler-design-lab/blob/main/lexical-analyzer/lexical-analyzer.cpp">Code</a> |
 | 2 | Build a lexical analyzer implementing the following regualar expressions: | <a href="https://github.com/fahimahammed/compiler-design-lab/blob/main/lexical-analyzer/lexical-analyzer.cpp">Code</a> |
 |  | a) Integer Variable = (i-nI-N)(a-zA-Z0-9) |  |
-|  | b) ShortInt Number = (1-9)|(1-9)(0-9)|(1-9)(0-9)(0-9)|(1-9)(0-9)(0-9)(0-9) |  |
+|  | b) ShortInt Number = '(1-9)|(1-9)(0-9)|(1-9)(0-9)(0-9)|(1-9)(0-9)(0-9)(0-9)' |  |
 
