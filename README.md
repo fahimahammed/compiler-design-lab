@@ -27,5 +27,5 @@
 |  | Invalid input or Undefined = Otherwise |  |
 | 3 | Write a program to recognize C which converts a word of C++ Program to its equivalent token: i) Keyword, ii) Indentifier, iii) Operator & iv) Constant | <a href="#">Code</a> |
 | 4 | Write a program to generate a syntax tree for the sentence `a+b*c` with the following grammer: `E -> E+E / E-E / E*E / E/E / (E) / a / b / c | <a href="#">Code</a> |
-| 5 | Write a program which checks a validity of C++ expression derived by the following grammer: E -> E A E / (E) / ID; A -> + / - / * / /; ID -> any valid identifier / any valid integer  <a href="#">Code</a> |
-| 6 | Write a program that converts the c++ expression to an intermeditate code of Post-fix notation form. <a href="#">Code</a> |
+| 5 | Write a program which checks a validity of C++ expression derived by the following grammer: E -> E A E / (E) / ID; A -> + / - / * / /; ID -> any valid identifier / any valid integer  |<a href="#">Code</a> |
+| 6 | Write a program that converts the c++ expression to an intermeditate code of Post-fix notation form. | <a href="#">Code</a> |
