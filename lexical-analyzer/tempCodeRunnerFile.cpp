@@ -1,1 +1,3 @@
-(token[0] >= 'i' && token[0] <= 'n') || ((token[0] >= 'I' && token[0] <= 'N'))
+if (i == exp.size() - 1){
+            //     token += exp[i];
+            // }
