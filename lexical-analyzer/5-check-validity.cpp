@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
 using namespace std;
 
 bool isIdentifier(string token){
@@ -36,12 +34,14 @@ bool isValid(string exp){
     if(checkFistLast(exp[0]) || checkFistLast(exp[exp.size() - 1])) return false;
 
     for (int i = 0; i < exp.size(); i++) {
-        if (checkOperator(exp[i])) {
+        if (checkOperator(exp[i]) || i == exp.size() - 1) {
+            if(i == exp.size() - 1) token += exp[i];
             isOperator = true;
             if(isOperator && checkOperator(exp[i+1])) return false;
             else isOperator = false;
 
             if(!(isIdentifier(token)) && !(isInteger(token))) return false;
+            
             token = "";
         }
         else token += exp[i];
@@ -50,7 +50,7 @@ bool isValid(string exp){
 }
 
 int main(){
-    string exp = "2+3*5";
+    string exp = "2+3*5l";
     if(isValid(exp)) cout << "VALID" << endl;
     else cout << "INVALID" << endl;
     return 0;
