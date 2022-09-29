@@ -14,5 +14,8 @@
 | SL |Problem | Source Code |
 | -- |--------| --------- |
 | 1 | Lexical Analyzer | <a href="https://github.com/fahimahammed/compiler-design-lab/blob/main/lexical-analyzer/lexical-analyzer.cpp">Code</a> |
-
+| 2 | Build a lexical analyzer implementing the following regualar expressions:
+    a. fksj
+    b. slkfjlsd
+ | <a href="https://github.com/fahimahammed/compiler-design-lab/blob/main/lexical-analyzer/lexical-analyzer.cpp">Code</a> |
 
