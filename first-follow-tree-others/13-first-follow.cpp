@@ -126,7 +126,7 @@ int32_t main() {
     freopen("input.txt", "r", stdin);
 
     cout << "'e' is assign for epsilon.\nUse it for esilon\n";
-    takeInput();
+    //takeInput();
     for (char ch : nonTerminal) {
         if (isVisited.count(ch))
             continue;
