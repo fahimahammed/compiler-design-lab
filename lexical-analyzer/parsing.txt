@@ -1,0 +1,62 @@
+void calc_LLParsingTable() {
+    int i, j;
+    printf("\n");
+    printf("\n\t**************** LL(1) PARSING TABLE *******************\n");
+    printf("\t--------------------------------------------------------\n");
+    printf("%-10s", "");
+    mark['#'] = 1;
+    for (i = 0; i < 8; i++) {
+        for (j = 0; j < FIRST[i].size(); j++) {
+            if (!mark[FIRST[i][j]])
+                terminal.push_back(FIRST[i][j]);
+            mark[FIRST[i][j]] = 1;
+        }
+        for (j = 0; j < FOLLOW[i].size(); j++) {
+            if (!mark[FOLLOW[i][j]]){
+                terminal.push_back(FOLLOW[i][j]);
+            }
+                
+            mark[FOLLOW[i][j]] = 1;
+        }
+    }
+    for (i = 0; i < terminal.size(); i++) {
+        printf("%-10c", terminal[i]);
+    }
+    printf("\n");
+    printf("\n");
+
+    for (i = 0; i < 8; i++) {
+
+        for (j = 0; j < FIRST[i].size(); j++) {
+            if (FIRST[i][j] != '#')
+                table[FIRST[i][j]].push_back(grammar[i]);
+            else {
+                for (int k = 0; k < FOLLOW[i].size(); k++) {
+                    table[FOLLOW[i][k]].push_back(grammar[i]);
+
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < 5; i++) {
+        char ch = grammar[i][0];
+        printf("%-10c", ch);
+        for (j = 0; j < terminal.size(); j++) {
+            char ter = terminal[j];
+            for (int k = 0; k < table[ter].size(); k++) {
+                if (table[ter][k][0] == ch) {
+                    cpy_str(table[ter][k]);
+                    //table[ter][k][0] = '-';
+                    goto br;
+
+                }
+            }
+
+            printf("%-10s", "");
+        br:;
+        }
+        printf("\n");
+    }
+    cout << endl;
+}
