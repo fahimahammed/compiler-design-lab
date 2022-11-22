@@ -147,7 +147,7 @@ void LexicalAnalyzer(string expression) {
 }
 
 int main() {
-    string exp = "a Iiaz3 *3ij 123 12345 12s345 hx34Z Zci4V C34z0 0.1 0.113.12 121.12 12.1212 ch_12a bn_3s 012 011 11100";
+    string exp = "j45 143 123422";
     cout << "String: " << exp << endl;
     LexicalAnalyzer(exp);
 }

@@ -32,10 +32,10 @@ void insertProdcution(string& prod) {
 }
 
 void takeInput() {
-    cout << "Instruction:\n";
-    cout << "1) Make the grammer unambigouse.\n";
-    cout << "2) Production must start from S->someting.\n";
-    cout << "3) Use the production rules as 'Non-Terminal' '->' 'production ruls'.\n\n\n";
+    // cout << "Instruction:\n";
+    // cout << "1) Make the grammer unambigouse.\n";
+    // cout << "2) Production must start from S->someting.\n";
+    // cout << "3) Use the production rules as 'Non-Terminal' '->' 'production ruls'.\n\n\n";
 
     cout << "Enter the number of Producation: \n";
     int numberOfProduction;
@@ -126,7 +126,7 @@ int32_t main() {
     freopen("input.txt", "r", stdin);
 
     cout << "'e' is assign for epsilon.\nUse it for esilon\n";
-    //takeInput();
+    takeInput();
     for (char ch : nonTerminal) {
         if (isVisited.count(ch))
             continue;
